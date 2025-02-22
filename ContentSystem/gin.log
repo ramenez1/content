@@ -1,0 +1,15 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /:flowName                --> github.com/s8sg/goflow/runtime.Router.executeRequestHandler.func1 (3 handlers)
+[GIN-debug] GET    /:flowName                --> github.com/s8sg/goflow/runtime.Router.executeRequestHandler.func2 (3 handlers)
+[GIN-debug] POST   /flow/:flowName           --> github.com/s8sg/goflow/runtime.Router.executeRequestHandler.func3 (3 handlers)
+[GIN-debug] GET    /flow/:flowName           --> github.com/s8sg/goflow/runtime.Router.executeRequestHandler.func4 (3 handlers)
+[GIN-debug] POST   /flow/:flowName/request/stop:requestId --> github.com/s8sg/goflow/runtime.Router.stopRequestHandler.func5 (3 handlers)
+[GIN-debug] POST   /flow/:flowName/request/pause:requestId --> github.com/s8sg/goflow/runtime.Router.pauseRequestHandler.func6 (3 handlers)
+[GIN-debug] POST   /flow/:flowName/request/resume:requestId --> github.com/s8sg/goflow/runtime.Router.resumeRequestHandler.func7 (3 handlers)
+[GIN-debug] POST   /flow/:flowName/request/state:requestId --> github.com/s8sg/goflow/runtime.Router.requestStateHandler.func8 (3 handlers)
+[GIN-debug] POST   /flow/:flowName/request/list --> github.com/s8sg/goflow/runtime.Router.requestListHandler.func9 (3 handlers)

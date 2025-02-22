@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package api.operate;
+
+option go_package = "content_manage/api/operate;operate";
+option java_multiple_files = true;
+option java_package = "api.operate";
+
+service App {
+	//创建内容
+	rpc CreateContent (CreateContentReq) returns (CreateContentRsp);
+	//内容更新
+	rpc UpdateContent (UpdateContentReq) returns (UpdateContentRsp);
+	//删除内容
+	rpc DeleteContent (DeleteContentReq) returns (DeleteContentRsp);
+	//内容查找
+	rpc FindContent (FindContentReq) returns (FindContentRsp);
+}
+message Content{
+	// 内容ID
+	int64 id = 1;
+	// 内容标题
+	string title = 2;
+	// 视频播放URL
+	string video_url = 3;
+	// 作者
+	string author = 4;
+	// 内容描述
+	string Description = 5;
+	// 封面图URL
+	string thumbnail = 6;
+	// 内容分类
+	string category = 7;
+	// 内容时长
+	int64 duration = 8;
+	// 分辨率 如720p、1080p
+	string resolution = 9;
+	// 文件大小
+	int64 file_size = 10;
+	// 文件格式 如MP4、AVI
+	string format = 11;
+	//  // 视频质量 1-高清 2-标清
+	int32 quality = 12;
+	// 审核状态 1-审核中 2-审核通过 3-审核不通过
+	int32 approval_status = 13;
+}
+
+message CreateContentReq {
+	// 内容
+	Content content = 1;
+}
+message CreateContentRsp {}
+
+message UpdateContentReq {
+	// 内容
+  Content content = 1;
+}
+message UpdateContentRsp {
+}
+
+message DeleteContentReq{
+	// 内容ID
+	int64 id = 1;
+}
+message DeleteContentRsp {
+}
+
+message FindContentReq {
+	// 内容ID
+	int64 id = 1;
+	// 作者
+	string author = 2;
+	// 标题
+	string title = 3;
+	// 页
+	int32 page = 4;
+	// 页大小
+	int32 page_size = 5;
+}
+
+message FindContentRsp{
+	//内容总数
+	int64 total = 1;
+	// 内容
+	repeated Content content = 2;
+}
